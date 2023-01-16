@@ -1,11 +1,5 @@
 const router = require("express").Router();
-const path = require("path");
-const usersController = require(path.join(
-  __dirname,
-  "..",
-  "controllers",
-  "UsersController"
-));
+const usersController = require("../controllers/usersController");
 
 router.get("/users", usersController.getUsers);
 router.get("/users/not-payed", usersController.getUsersNotPayed);
