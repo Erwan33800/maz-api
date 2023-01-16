@@ -15,7 +15,7 @@ connectDB();
 
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(authRoutes);
 app.use(usersRoutes);
