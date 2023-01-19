@@ -92,7 +92,17 @@ const ticketsMail = `<mjml version="3.3.3">
     padding="20px 0"
     text-align="center"
     vertical-align="top"
-  ></mj-section>
+  >
+    <mj-column>
+      <mj-text align="center" color="#ffffff" font-family="Arial, sans-serif" font-size="13px" line-height="22px" padding="10px 25px
+      ">Suivez-nous sur les réseaux sociaux</mj-text>
+      <mj-social font-size="14px" icon-size="20px" mode="horizontal" padding="10px 0">
+        <mj-social-element name="facebook" href="https://www.facebook.com/mazfestival"></mj-social-element>
+        <mj-social-element name="twitter" href="https://twitter.com/mazfestival"></mj-social-element>
+        <mj-social-element name="instagram" href="https://www.instagram.com/mazfestival"></mj-social-element>
+      </mj-social>
+    </mj-column>
+  </mj-section>
 </mj-body>
 </mjml>`;
 
