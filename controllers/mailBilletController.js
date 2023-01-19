@@ -1,7 +1,6 @@
 const nodemailer = require("nodemailer");
 const User = require("../models/User");
 const mjml2html = require("mjml");
-const mailView = require("../mailLayout/confirmationPaiement.html");
 
 const ticketsMail = `<mjml version="3.3.3">
 <mj-head>
@@ -50,6 +49,7 @@ const ticketsMail = `<mjml version="3.3.3">
 </mjml>;`;
 
 const ticketsMailHtml = mjml2html(ticketsMail).html;
+console.log(ticketsMailHtml);
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -69,7 +69,20 @@ module.exports.sendEmails = (req, res) => {
     from: "Maz Festival",
     to: users.map((user) => user.email).join(","),
     subject: "Confirmation de paiement",
-    html: mailView,
+    html: `
+    <html>
+      <head>
+        <title>Confirmation de paiement</title>
+        </head>
+        <body>
+          <h1>Confirmation de paiement</h1> 
+          <p>Cher(e) Maziste,</p>
+          <p>Ton paiement pour l'achat de ton billet pour le Maz Festival a bien été reçu. Nous sommes super heureux et fiers de la confiance que tu places en nous pour préparer un week-end de zinzin !</p>
+          <p>À très vite,</p>
+          <p>L'équipe du Maz Festival</p>
+          </body>
+          </html>
+          `,
   };
 
   // Envoyez l'e-mail en utilisant nodemailer
