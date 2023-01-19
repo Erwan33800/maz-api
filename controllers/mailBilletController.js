@@ -94,7 +94,7 @@ const ticketsMail = `<mjml version="3.3.3">
     vertical-align="top"
   ></mj-section>
 </mj-body>
-</mjml>;`;
+</mjml>`;
 
 const ticketsMailHtml = mjml2html(ticketsMail).html;
 
@@ -116,7 +116,8 @@ module.exports.sendEmails = (req, res) => {
     from: "Maz Festival",
     to: users.map((user) => user.email).join(","),
     subject: "Confirmation de paiement",
-    text: ticketsMailHtml,
+    text: "Confirmation de paiement",
+    html: ticketsMailHtml,
   };
 
   // Envoyez l'e-mail en utilisant nodemailer
