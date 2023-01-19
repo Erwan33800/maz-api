@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 const User = require("../models/User");
 const ticketsMail = require("../LayoutMails/TicketsMail");
-import { mjml2html } from "mjml";
+const mjml2html = require("mjml");
 
 const ticketsMailHtml = mjml2html(ticketsMail).html;
 
