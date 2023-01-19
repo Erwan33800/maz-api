@@ -1,6 +1,10 @@
 const nodemailer = require("nodemailer");
 const User = require("../models/User");
 
+const mjml = require("mjml");
+const mjmlContent = require('./mailTplBillet.js')
+const { html } = mjml(mjmlContent);
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   host: "smtp.gmail.com",
@@ -19,7 +23,7 @@ module.exports.sendEmails = (req, res) => {
     from: "Maz Festival",
     to: users.map((user) => user.email).join(","),
     subject: "Confirmation de paiement",
-    text: "Bien ouej mon pôte, tu viens de valider ta place pour le MAZ Festival 3e édition !",
+    text: html,
   };
 
   // Envoyez l'e-mail en utilisant nodemailer
