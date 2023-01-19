@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 const User = require("../models/User");
 const mjml2html = require("mjml");
-const mailView = require("../mailLayout/confirmationPaiement");
+const mailView = require("../mailLayout/confirmationPaiement.html");
 
 const ticketsMail = `<mjml version="3.3.3">
 <mj-head>
