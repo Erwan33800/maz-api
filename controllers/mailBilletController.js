@@ -49,7 +49,6 @@ const ticketsMail = `<mjml version="3.3.3">
 </mjml>`;
 
 const ticketsMailHtml = mjml2html(ticketsMail).html;
-console.log(ticketsMailHtml);
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
